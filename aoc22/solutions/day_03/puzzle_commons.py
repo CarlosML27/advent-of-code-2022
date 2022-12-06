@@ -1,12 +1,14 @@
-def get_rucksacks(lines: list[str]) -> list[tuple[str, str]]:
-    rucksacks = []
-    for line in lines:
-        first_compartment = line[: len(line) // 2]
-        second_compartment = line[len(line) // 2 :]
-        rucksack = tuple((first_compartment, second_compartment))
-        rucksacks.append(rucksack)
-    return rucksacks
+def get_common_item(rucksack: list[str]) -> str:
+    rucksack = list(map(set, rucksack))
+    return ''.join(set.intersection(*rucksack))
 
 
-def get_common_item(rucksack: tuple[str, str]) -> str:
-    return ''.join(set(rucksack[0]).intersection(rucksack[1]))
+def get_rucksack_result(rucksack: list[str]) -> int:
+    common_item = get_common_item(rucksack)
+    ascii_lowercase_a_value = 97
+    ascii_uppercase_a_value = 65
+    if common_item.islower():
+        result = ord(common_item) - ascii_lowercase_a_value + 1
+    else:
+        result = ord(common_item) - ascii_uppercase_a_value + 27
+    return result
