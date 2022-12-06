@@ -1,6 +1,3 @@
-import os
-import pathlib
-
 from aoc22.inputs import get_relative_path, read_lines
 
 
