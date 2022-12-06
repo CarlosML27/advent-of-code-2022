@@ -1,4 +1,4 @@
-from aoc22 import run_01_1, run_01_2, run_02_1, run_02_2, run_03_1
+from aoc22 import run_01_1, run_01_2, run_02_1, run_02_2, run_03_1, run_03_2
 
 if __name__ == '__main__':
     print('-------')
@@ -16,4 +16,7 @@ if __name__ == '__main__':
     print('-------')
     print('Day 03, Puzzle 1:')
     run_03_1()
+    print('-------')
+    print('Day 03, Puzzle 2:')
+    run_03_2()
     print('-------')
